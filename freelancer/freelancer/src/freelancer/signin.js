@@ -37,19 +37,19 @@ class SignIn extends React.Component{
         e.preventDefault();
 
         var username = {username : this.state.username}
-        axios.post('http://localhost:3001/checkemail', username)
-        .then(res => {
-            debugger
-            var user_exist = res.data.user_exist;
+        // axios.post('http://localhost:3001/checkemail', username)
+        // .then(res => {
+        //     debugger
+        //     var user_exist = res.data.user_exist;
                 //<Redirect to='http://localhost:3000/' />
-            if(!user_exist){
-                document.getElementById('username').innerHTML = "User with this username does not exist"
-                // window.location.href = "http://localhost:3000/Da" 
-            }
-            else{
+            // if(!user_exist){
+            //     document.getElementById('username').innerHTML = "User with this username does not exist"
+            //     // window.location.href = "http://localhost:3000/Da" 
+            // }
+            // else{
                 var val = {username: this.state.username, password: this.state.password}
                 console.log(val)
-                axios.post('http://localhost:3001/signinprocess', val)
+                axios.post('http://localhost:8080/user/signin', val)
                 .then(res => {
                     if(res.data.logged_in){
                         window.sessionStorage.setItem("logged_in", res.data.logged_in);
@@ -61,8 +61,8 @@ class SignIn extends React.Component{
                         window.location.href = "http://localhost:3000/SignIn"
                     }
                 })
-            }
-        });
+            // }
+        // });
  
     }
 	render(){

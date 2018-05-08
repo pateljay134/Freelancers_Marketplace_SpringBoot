@@ -69,20 +69,20 @@ class SignUp extends React.Component{
             debugger
             var username = {username : this.state.username}
             var self = this
-        axios.post('http://localhost:3001/checkemail', username)
-        .then(res => {
-            debugger
-            var user_exist = res.data.user_exist;
+        // axios.post('http://localhost:3001/checkemail', username)
+        // .then(res => {
+        //     debugger
+        //     var user_exist = res.data.user_exist;
                 //<Redirect to='http://localhost:3000/' />
-            if(user_exist){
-                document.getElementById('username').innerHTML = "This username exists already"
-                // window.location.href = "http://localhost:3000/Da"
+            // if(user_exist){
+            //     document.getElementById('username').innerHTML = "This username exists already"
+            //     // window.location.href = "http://localhost:3000/Da"
                
-            }
-            else{
+            // }
+            // else{
                 var val = {name: self.state.name, username: self.state.username, password: self.state.password}
                
-                axios.post('http://localhost:3001/signupprocess', val)
+                axios.post('http://localhost:8080/user/signup', val)
                 .then(res => {
                 debugger
                 var logged_in = res.data.logged_in;
@@ -95,8 +95,8 @@ class SignUp extends React.Component{
                     // this.props.history.push('/Dashboard');
                 }
                 });
-            }
-        });
+            // }
+        // });
     } 
     }
 	render(){
