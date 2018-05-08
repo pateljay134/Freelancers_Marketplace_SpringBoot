@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './calc.css';
 
 class Display extends React.Component{

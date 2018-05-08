@@ -3,24 +3,28 @@ import './css/freelancer.css';
 import './css/bootstrap.min.css';
 import './css/main.css';
 import './css/util.css';
-import DisplayProjects from './displayprojects';
+import UserBiddedProjects from './userbiddedprojects';
 import axios from 'axios';
+// import HomePage from './homepage';
+// import 'https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900';
+// import 'https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i';
 import './css/one-page-wonder.min.css';
+//import { debug } from 'util';
 
-class DashBoard extends React.Component{
+class UserBids extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {projects : [],average_days:[]}
+        this.state = {projects : []}
     }
 
-    componentDidMount() {
+    componentWillMount() {
         debugger
-        axios.post('http://localhost:3001/projectsfetch')
+        var profile = {username : window.sessionStorage.getItem("username")}
+        axios.post('http://localhost:3001/userbids', profile)
         .then(res => {
             debugger
             this.setState({
-                projects : res.data.rows,
-                average_days : res.data.result
+                projects : res.data.rows
             })
         });
         debugger
@@ -29,29 +33,23 @@ class DashBoard extends React.Component{
 	render(){
 
         var project_list = this.state.projects.map( data => { 
-                return(
-                <DisplayProjects project_id = {data.project_id}  title = {data.title} description = {data.description} skills_required = {data.skills_required} employer = {data.employer} budget_range = {data.budget_range} total_bids = {data.total_bids} status = {data.status}/>
-
-                )
+            return(
+            <UserBiddedProjects bid_id = {data.bid_id} project_id = {data.project_id} days = {data.days} usd = {data.usd} bidder_name = {data.bidder_name}/>
+            )
         })
 
-
         if(window.sessionStorage.logged_in === "true"){
-            
             return(
                 <div className="table">
                 
                     <table className="table">
                         <thead>
                             <tr >
+                            <th>Bid Id</th>
                             <th>Project Id</th>
-                            <th>Project Name</th>
-                            <th>Description</th>
-                            <th>Skills Required</th>
-                            <th>Employer</th>
-                            <th>Budget Range</th>
-                            <th>Project Status</th>
-                            <th>Average Days</th>
+                            <th>Days</th>
+                            <th>USD/hour</th>
+                            <th>Bidder_name</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -69,4 +67,4 @@ class DashBoard extends React.Component{
     }
 }
 
-export default DashBoard;
+export default UserBids;
