@@ -24,4 +24,11 @@ public class UserController {
         return "Saved";
     }
 
+    @PostMapping(path="/signin", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody String signup (@RequestBody Users user){
+        System.out.println("User is in login part" + user.getUsername());
+        userService.login(user);
+        return "Logged_in";
+    }
+
 }
