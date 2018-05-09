@@ -66,6 +66,7 @@ public class UserControllerTest {
     private MockMvc mockMvc;
 
 
+
     @Test
     public void testGetUserObject() throws Exception {
         String URI = "/user/profilefetch";
@@ -81,6 +82,7 @@ public class UserControllerTest {
 
         Assert.assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
+
 
     @Test
     public void testcheckUserEmail() throws Exception {

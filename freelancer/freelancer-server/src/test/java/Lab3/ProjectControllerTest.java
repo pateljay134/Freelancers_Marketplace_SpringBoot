@@ -68,7 +68,6 @@ public class ProjectControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-
     @Test
     public void testGetAllUserPublishedProjects() throws Exception {
 
@@ -84,6 +83,7 @@ public class ProjectControllerTest {
         Assert.assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
 
+
     @Test
     public void testGetUserAllBidedProjects() throws Exception {
 
@@ -98,7 +98,6 @@ public class ProjectControllerTest {
 
         Assert.assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
-
 
 
 

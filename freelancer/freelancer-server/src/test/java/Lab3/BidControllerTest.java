@@ -71,6 +71,7 @@ public class BidControllerTest {
     private MockMvc mockMvc;
 
 
+
     @Test
     public void testGetAllBids() throws Exception {
 
@@ -101,8 +102,7 @@ public class BidControllerTest {
         Assert.assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
 
-
-
+    
 
 
 }
