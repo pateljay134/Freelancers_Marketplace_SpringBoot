@@ -14,7 +14,7 @@ class BidderProfileImage extends React.Component{
         debugger
         profile = {username : window.sessionStorage.getItem("bidderprofilename")}
         window.sessionStorage.setItem("bidderprofile",false)
-        axios.post('http://localhost:3001/profilefetch', profile)
+        axios.post('http://localhost:8080/project/profilefetch', profile)
         .then(res => {
             debugger
             this.setState({

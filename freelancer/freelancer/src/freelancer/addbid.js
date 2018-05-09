@@ -28,7 +28,7 @@ class AddBid extends React.Component{
         e.preventDefault();
         // var data_inserted;
         var val = {project_id : this.state.project_id, days: this.state.days, usd : this.state.usd, employer : this.state, bidder_name: window.sessionStorage.getItem("username")}
-        axios.post('http://localhost:3001/addbid', val)
+        axios.post('http://localhost:8080/project/addbid', val)
         .then(res => {
             debugger
             var bid_added = res.data.bid_added;
@@ -53,7 +53,7 @@ class AddBid extends React.Component{
     componentDidMount() {
         var project_details = { project_id : window.sessionStorage.getItem("project_id")}
         debugger
-        axios.post('http://localhost:3001/projectfetch', project_details)
+        axios.post('http://localhost:8080/project/projectfetch', project_details)
         .then(res => {
             debugger
             this.setState({

@@ -37,7 +37,7 @@ class SignIn extends React.Component{
         e.preventDefault();
 
         var username = {username : this.state.username}
-        // axios.post('http://localhost:3001/checkemail', username)
+        // axios.post('http://localhost:8080/checkemail', username)
         // .then(res => {
         //     debugger
         //     var user_exist = res.data.user_exist;

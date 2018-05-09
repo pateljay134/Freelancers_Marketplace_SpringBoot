@@ -18,7 +18,7 @@ class ProfileImage extends React.Component{
         var self=this
         if(window.sessionStorage.getItem("username") === window.sessionStorage.getItem("bidderprofilename")){
         profile = {username : window.sessionStorage.getItem("username")}
-        axios.post('http://localhost:3001/profilefetch', profile)
+        axios.post('http://localhost:8080/user/profilefetch', profile)
         .then(res => {
             this.setState({
                 image_name : res.data.rows.profile_image
@@ -26,7 +26,7 @@ class ProfileImage extends React.Component{
         });
         }else{
             profile = {username : window.sessionStorage.getItem("username")}
-            axios.post('http://localhost:3001/profilefetch', profile)
+            axios.post('http://localhost:8080/userprofilefetch', profile)
             .then(res => {
                 self.setState({
                     image_name : res.data.rows.profile_image
@@ -62,7 +62,7 @@ class ProfileImage extends React.Component{
             }
         }
 
-        axios.post('http://localhost:3001/imageupdate', formData, config)
+        axios.post('http://localhost:8080/user/imageupdate', formData, config)
         .then(res => {
             debugger
             var data_inserted = res.data.image_updated;

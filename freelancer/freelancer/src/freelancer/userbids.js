@@ -20,7 +20,7 @@ class UserBids extends React.Component{
     componentWillMount() {
         debugger
         var profile = {username : window.sessionStorage.getItem("username")}
-        axios.post('http://localhost:3001/userbids', profile)
+        axios.post('http://localhost:8080/bid/userbids', profile)
         .then(res => {
             debugger
             this.setState({

@@ -16,7 +16,7 @@ class DisplayProjectDetails extends React.Component{
     handleLinkClick(e){
         // debugger
         // var profile = {username :this.props.bidder_name}
-        // axios.post('http://localhost:3001/bidderfetch',profile)
+        // axios.post('http://localhost:8080/bidderfetch',profile)
         // .then(res => {
             debugger
             window.sessionStorage.setItem("bidderprofilename", this.props.bidder_name)
@@ -28,7 +28,7 @@ class DisplayProjectDetails extends React.Component{
     handleClick(e){
         debugger
         var bidder_name = {bidder_name : e.target.value, project_id : window.sessionStorage.getItem("project_id")}
-        axios.post('http://localhost:3001/hirebidder',bidder_name)
+        axios.post('http://localhost:8080/bid/hirebidder',bidder_name)
         .then(res => {
             debugger
             window.location.href = "http://localhost:3000/adminaction"

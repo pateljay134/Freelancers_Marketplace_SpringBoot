@@ -79,7 +79,7 @@ class AddProject extends React.Component{
         formData.append('range', this.state.range);
         formData.append('username', window.sessionStorage.getItem("username"));
 
-        axios.post('http://localhost:3001/addproject', formData,config)
+        axios.post('http://localhost:8080/project/addproject', formData,config)
         .then(res => {
             project_added= res.data.project_added
             if(project_added){

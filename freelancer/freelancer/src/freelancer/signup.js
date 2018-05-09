@@ -69,7 +69,7 @@ class SignUp extends React.Component{
             debugger
             var username = {username : this.state.username}
             var self = this
-        // axios.post('http://localhost:3001/checkemail', username)
+        // axios.post('http://localhost:8080/checkemail', username)
         // .then(res => {
         //     debugger
         //     var user_exist = res.data.user_exist;
@@ -84,7 +84,7 @@ class SignUp extends React.Component{
                
                 axios.post('http://localhost:8080/user/signup', val)
                 .then(res => {
-                debugger
+                
                 var logged_in = res.data.logged_in;
                     //<Redirect to='http://localhost:3000/' />
                 if(logged_in){
@@ -157,7 +157,7 @@ class SignUp extends React.Component{
 // function mapDispatchToProps(dispatch){
 //     return{
 //         registerUser : (details) => {
-//             axios.post('http://localhost:3001/signupprocess'), details)
+//             axios.post('http://localhost:8080/signupprocess'), details)
 //             .then((res) => {
 //                 dispatch({
 //                     type : 'logged_in', payload : res

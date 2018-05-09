@@ -18,7 +18,7 @@ class ProjectData extends React.Component{
     componentDidMount() {
         var project_details = { project_id : window.sessionStorage.getItem("project_id")}
         debugger
-        axios.post('http://localhost:3001/projectfetch', project_details)
+        axios.post('http://localhost:8080/project/projectfetch', project_details)
         .then(res => {
             debugger
             console.log(res.data.average_days.avg)

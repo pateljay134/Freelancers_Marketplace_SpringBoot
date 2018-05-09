@@ -20,7 +20,7 @@ class UserProjects extends React.Component{
     componentWillMount() {
         debugger
         var profile = {username : window.sessionStorage.getItem("username")}
-        axios.post('http://localhost:3001/userprojects', profile)
+        axios.post('http://localhost:8080/bid/userprojects', profile)
         .then(res => {
             debugger
             this.setState({

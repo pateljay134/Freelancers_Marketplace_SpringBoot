@@ -17,7 +17,7 @@ class BidderProfileDetails extends React.Component{
             window.sessionStorage.setItem("bidderprofile",false)
             var profile = {username : bidderprofilename}
             debugger
-            axios.post('http://localhost:3001/profilefetch', profile)
+            axios.post('http://localhost:8080/project/profilefetch', profile)
             .then(res => {
                 debugger
                 this.setState({

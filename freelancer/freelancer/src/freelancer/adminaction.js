@@ -22,7 +22,7 @@ class DashBoard extends React.Component{
         debugger
         var project_details = { project_id : window.sessionStorage.getItem("project_id")}
         var bidder_details = { project_id : window.sessionStorage.getItem("project_id")}
-        axios.post('http://localhost:3001/projectfetch',project_details)
+        axios.post('http://localhost:8080/project/projectfetch',project_details)
         .then(res => {
             var project = res.data.rows
             this.setState({
@@ -36,7 +36,7 @@ class DashBoard extends React.Component{
                 status  : project.status
             })
         });
-        axios.post('http://localhost:3001/biddersfetch',bidder_details)
+        axios.post('http://localhost:8080/project/biddersfetch',bidder_details)
         .then(res => {
             this.setState({
                 bidders_list : res.data.rows

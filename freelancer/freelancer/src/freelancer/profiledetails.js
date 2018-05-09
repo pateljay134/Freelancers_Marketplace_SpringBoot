@@ -17,7 +17,7 @@ class ProfileDetails extends React.Component{
     componentWillMount() {
             var profile = {username : window.sessionStorage.getItem("username")}
             debugger
-            axios.post('http://localhost:3001/profilefetch', profile)
+            axios.post('http://localhost:8080/project/profilefetch', profile)
             .then(res => {
                 debugger
                 this.setState({
@@ -55,7 +55,7 @@ class ProfileDetails extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         var val = {name: this.state.name, username: this.state.username, password: this.state.password, phone_number: this.state.phone_number, skills: this.state.skills, about_me: this.state.about_me}
-        axios.post('http://localhost:3001/profileupdate', val)
+        axios.post('http://localhost:8080/profileupdate', val)
         .then(res => {
             debugger
             var data_inserted = res.data.data_inserted;

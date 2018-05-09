@@ -19,7 +19,7 @@ class DisplayProjects extends React.Component{
         if(this.props.project_id !== null){
         var project_details = { project_id : this.props.project_id}
         debugger
-        axios.post('http://localhost:3001/projectfetch', project_details)
+        axios.post('http://localhost:8080/project/projectfetch', project_details)
         .then(res => {
             debugger
             this.setState({
@@ -30,7 +30,7 @@ class DisplayProjects extends React.Component{
         // else{
         //     var project_details = { project_id : this.props.project_id}
         //     debugger
-        //     axios.post('http://localhost:3001/projectfetch', project_details)
+        //     axios.post('http://localhost:8080/project/projectfetch', project_details)
         //     .then(res => {
         //         debugger
         //         this.setState({
