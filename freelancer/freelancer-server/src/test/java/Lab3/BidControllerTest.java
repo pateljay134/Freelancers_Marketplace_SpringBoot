@@ -102,7 +102,7 @@ public class BidControllerTest {
         Assert.assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
 
-    
+
 
 
 }
