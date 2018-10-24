@@ -1,4 +1,4 @@
-#  Freelancers' Marketplace using Spring Boot
+#  Freelancers' Marketplace using SpringBoot
 Creating the prototype of Freelancer web application ( freelancer.com ) to demonstrate the use of stateless RESTful web services.
 
 
